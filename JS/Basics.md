@@ -4,7 +4,7 @@
 3. Jquery
 ***
 ## Basics
-### Variables and Data types
+### Variables and Primitive Data types
 ````js
 const a=10
 let name='sonkho'
@@ -148,9 +148,122 @@ console.log(myDate.toJSON()); //2024-05-30T23:04:01.489Z
 console.log(myDate.toLocaleDateString()); //31/5/2024
 console.log(myDate.toLocaleTimeString()); // 4:34:01 am
 
+console.log(newDate.getMonth() + 1); //to get the month
+console.log(newDate.getDay()); //to get the day
+
 
 let myCreatedDate = new Date(2023, 0, 23) //23/1/2023, 12:00:00 am
 
 let myCreatedDate = new Date(2023, 0, 23, 5, 3)// 23/1/2023, 5:03:00 am
 console.log(myCreatedDate.toLocaleString());
+
+//Custom object for date to get custom output results according to users
+
+console.log(newDate.toLocaleString('default', {
+    weekday: "short",
+})); // Output is Fr and if weeekday: "long" output becomes Friday
+
+//Time
+
+console.log(myCreatedDate.getTime()); // to get the time in milisecond from the created date to today's date
+console.log(Math.floor(Date.now()/1000)); // to convert it into seconds
 ````
+### Datatypes Summary
+
+Primitive Dataypes
+
+1. String
+2. Number
+3. Boolean
+4. Null
+5. Undefined
+6. BigInt
+7. Symbol
+   
+````js
+//  Primitive
+
+//  7 types : String, Number, Boolean, null, undefined, Symbol, BigInt
+
+const score = 100
+const scoreValue = 100.3
+
+const isLoggedIn = false
+const outsideTemp = null
+let userEmail;
+
+const id = Symbol('123')
+const anotherId = Symbol('123')
+
+console.log(id === anotherId);
+
+// const bigNumber = 3456543576654356754n
+
+
+
+// Reference (Non primitive)
+
+// Array, Objects, Functions
+
+const heros = ["shaktiman", "naagraj", "doga"];
+let myObj = {
+    name: "hitesh",
+    age: 22,
+}
+
+const myFunction = function(){
+    console.log("Hello world");
+}
+````
+
+Non - Primitive Datatypes
+
+1. Arrays
+2. Objects
+3. Functions
+
+### Arrays
+````js
+// array
+
+const myArr = [0, 1, 2, 3, 'Hello', false] //Array Declaring
+const myHeors = ["shaktiman", "naagraj"]
+
+const myArr2 = new Array(1, 2, 3, 4) //Array declaring using object
+
+console.log(myArr[1]); //aray indexing
+
+// Array methods
+
+myArr.push(6)
+myArr.push(7)
+myArr.pop()
+
+const myArr = [0, 1, 2, 3, 'Hello', false]
+myArr.unshift(9) //adds the parameter passed to the first index of the array also returns the length of the array after inserting
+
+const val= myArr.unshift(9)
+console.log(val); // val is the length of the array after inserting
+
+myArr.shift() //removes the first index of the array
+
+const myArr = [0, 1, 2, 3, 'Hello', false]
+console.log(myArr.includes(9)); // returns boolean
+console.log(myArr.indexOf(3)); // returns index of element
+
+const newArr = myArr.join('-') // adds the all the elements of an array into a string joined by the parameter provided 
+
+// slice, splice in Arrays
+
+const myArr = [0, 1, 2, 3, 'Hello', false]
+
+const myn1 = myArr.slice(1, 3) // copies the elements from the inital array from index 1-2
+
+console.log(myn1); //[1,2]
+console.log("B ", myArr);//[0, 1, 2, 3, 'Hello', false]
+
+
+const myn2 = myArr.splice(1, 3) // cuts the elemets from the initial array from index 1-3
+
+console.log(myn2); // [1,2,3]
+console.log("C ", myArr);//[0, 'Hello', false]
