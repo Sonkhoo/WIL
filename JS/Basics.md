@@ -1,7 +1,12 @@
 # Contents
 1. Basics
-2. DOM Manipulation
-3. Jquery
+2. Control Flow
+3. Iterations
+4. DOM Manipulation
+5. Jquery
+6. Events
+7. Fetch and Promises
+8. Class and OOP
 ***
 ## Basics
 ### Variables and Primitive Data types
