@@ -383,3 +383,66 @@ const course = {
     courseInstructor: "hitesh"
 }
 const {courseInstructor: instructor} = course
+````
+### Functions
+````js
+function addTwoNumbers(number1, number2){  // Definind a function
+
+    return number1 + number2
+}
+
+const result = addTwoNumbers(3, 5) // calling a function by passing arguments
+
+
+// Passing parameter inside a function
+
+function calculateCartPrice(val1, val2, ...num1){ 
+    return [val1 +val2 + num1[0] + num1[1], num1]
+}
+
+console.log(calculateCartPrice(100, 100, 100, 100)) // output is [ 400, [ 100, 100 ] ]
+````
+### Scope
+Each {} is a scope and there is global scope also. A variable declaraed in an outer scope can be used in an inner scope but vice versa not possible.
+````js
+function one(){
+    const username = "hitesh"
+
+    function two(){
+        const website = "youtube"
+        console.log(username); // will be printed
+    }
+    two()
+    console.log(website); // wont be printed
+}
+one()
+````
+### DIfferent types of functions
+````js
+// Using arrow function and parenthesis
+
+const addTwo = (num1, num2) => {
+    return num1 + num2 //you cannot use console.log in an arrow function
+}
+console.log(addTwo(2,3));
+
+// Using arrow function and  first bracket but should be in a sinle line
+
+const addTwo2 = (num1, num2) =>  (num1 + num2)
+const addTwo2 = (num1, num2) => ({username: "hitesh"}) // an object can also be printed.
+console.log(addTwo2(3, 4))
+
+// Immediately Invoked Function Expressions (IIFEE)
+
+// it is used when we do not want the global scope to polute the value returned by the function. 
+//We just apply first bracket and directly call the function.
+
+(function chai(){
+    // named IIFE
+    console.log(`DB CONNECTED`);
+})();
+
+( (name) => {
+    console.log(`DB CONNECTED TWO ${name}`);
+} )('hitesh')
+````
