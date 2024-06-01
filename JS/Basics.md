@@ -446,3 +446,65 @@ console.log(addTwo2(3, 4))
     console.log(`DB CONNECTED TWO ${name}`);
 } )('hitesh')
 ````
+### Control Flow
+
+**if else statements**
+````js
+if ( temperature === 40 ){
+    console.log("temperature is 40");
+} 
+else if(temperature < 40 ) {
+    console.log("temperature is lesser than 40");
+}
+else{
+    console.log("temperature is more than 40");
+}
+````
+**Comparision Operators** :
+// <, >, <=, >=, ==, !=, ===, !==
+
+**Relational Operator** : && , ||
+ ````js
+const userLoggedIn = true
+const debitCard = true
+const loggedInFromGoogle = false
+const loggedInFromEmail = true
+
+if (userLoggedIn && debitCard && 2==3) {
+    console.log("Allow to buy course");
+}
+
+if (loggedInFromGoogle || loggedInFromEmail) {
+    console.log("User logged in");
+}
+````
+**Switch Case statement**
+````js
+const month = "march"
+
+switch (month) {
+    case "jan":
+        console.log("January");
+        break;
+    case "feb":
+        console.log("feb");
+        break;
+    case "march":
+        console.log("march");
+        break;
+    case "april":
+        console.log("april");
+        break;
+
+    default:
+        console.log("default case match");
+        break;
+}
+````
+**Truthy and Falsy Values**
+
+Truthy values:
+````js truth "0", 'false', " ", [], {}, function(){}````
+
+Falsy values: 
+````js false, 0, -0, BigInt 0n, "", null, undefined, NaN````
