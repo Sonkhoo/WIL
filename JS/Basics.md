@@ -233,11 +233,28 @@ const myArr2 = new Array(1, 2, 3, 4) //Array declaring using object
 
 console.log(myArr[1]); //aray indexing
 
+
 // Array methods
 
 myArr.push(6)
 myArr.push(7)
 myArr.pop()
+console.log(myArr.includes(9)); // returns boolean
+console.log(myArr.indexOf(3)); // returns index of element
+const newArr = myArr.join('-') // adds the all the elements of an array into a string joined by the parameter provided 
+
+myar1=Array.from("Hitesh") //breaks the string into array
+console.log(Array.isArray([{}])) //checks if the parameter passed is an array
+console.log(Array.from({name: "hitesh"})) // returns an empty array as it cannot iterate through objects
+
+let score1 = 100
+let score2 = 200
+let score3 = 300
+
+console.log(Array.of(score1, score2, score3)); //returns an array of the parameters provided
+
+
+// Shift and Unshift
 
 const myArr = [0, 1, 2, 3, 'Hello', false]
 myArr.unshift(9) //adds the parameter passed to the first index of the array also returns the length of the array after inserting
@@ -247,23 +264,117 @@ console.log(val); // val is the length of the array after inserting
 
 myArr.shift() //removes the first index of the array
 
-const myArr = [0, 1, 2, 3, 'Hello', false]
-console.log(myArr.includes(9)); // returns boolean
-console.log(myArr.indexOf(3)); // returns index of element
-
-const newArr = myArr.join('-') // adds the all the elements of an array into a string joined by the parameter provided 
 
 // slice, splice in Arrays
 
 const myArr = [0, 1, 2, 3, 'Hello', false]
 
 const myn1 = myArr.slice(1, 3) // copies the elements from the inital array from index 1-2
-
 console.log(myn1); //[1,2]
 console.log("B ", myArr);//[0, 1, 2, 3, 'Hello', false]
 
 
 const myn2 = myArr.splice(1, 3) // cuts the elemets from the initial array from index 1-3
-
 console.log(myn2); // [1,2,3]
 console.log("C ", myArr);//[0, 'Hello', false]
+
+
+// Joining an array
+
+const marvel_heros = ["thor", "Ironman", "spiderman"]
+const dc_heros = ["superman", "flash", "batman"]
+
+marvel_heros.push(dc_heros)  // pushes the array passed as argument as an individual array rather than pushing the elements 
+console.log(marvel_heros[3][1]); // Output is flash
+
+const all_new_heros = [...marvel_heros, ...dc_heros] //Joins the elements of both the arrays and returns an array
+
+
+//Flatening an array
+
+const another_array = [1, 2, 3, [4, 5, 6], 7, [6, 7, [4, 5]]]
+
+const real_another_array = another_array.flat(1) //flats one time recursively. infinity can also be given to get flattened array
+console.log(real_another_array);
+````
+### Objects
+````js
+
+// singleton method of object creation
+
+Object.create
+
+
+// object literals
+
+const mySym = Symbol("key1") // declaring a symbol
+
+const JsUser = {
+    name: "Hitesh",
+    "full name": "Hitesh Choudhary",
+    [mySym]: "mykey1",
+    age: 18,
+    location: "Jaipur",
+    email: "hitesh@google.com",
+    isLoggedIn: false,
+    lastLoginDays: ["Monday", "Saturday"]
+}
+
+console.log(JsUser.email) // to access property
+console.log(JsUser["full name"]) // to access string property
+console.log(JsUser[mySym]) // to access symbol
+
+
+// Object methods
+
+Object.freeze(JsUser)
+console.log(Object.keys(JsUser));
+console.log(Object.values(JsUser));
+console.log(Object.entries(JsUser));
+console.log(JsUser.hasOwnProperty('isLoggedIn'));
+
+
+//Function inside an Object
+
+JsUser.greeting = function(){
+    console.log("Hello JS user");
+} // A propety greeting is created which stores this function
+
+JsUser.greetingTwo = function(){
+    console.log(`Hello JS user, ${this.name}`);
+} // this keyword can be used inside a function in an object to pass the properties of the object as a parameter to the function
+
+
+// Object inside an object
+
+const regularUser = {
+    email: "some@gmail.com",
+    fullname: {
+        userfullname: {
+            firstname: "hitesh",
+            lastname: "choudhary"
+        }
+    }
+}
+
+console.log(regularUser.fullname.userfullname.firstname);
+
+
+// Joining an object
+
+const obj1 = {1: "a", 2: "b"}
+const obj2 = {3: "a", 4: "b"}
+const obj4 = {5: "a", 6: "b"}
+
+const obj3 = {...obj1,...obj2,...obj4}
+console.log(obj3);
+
+
+// Changing names of keys in an object
+
+const course = {
+    coursename: "js in hindi",
+    price: "999",
+    courseInstructor: "hitesh"
+}
+const {courseInstructor: instructor} = course
