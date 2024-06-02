@@ -446,9 +446,9 @@ console.log(addTwo2(3, 4))
     console.log(`DB CONNECTED TWO ${name}`);
 } )('hitesh')
 ````
-### Control Flow
+## Control Flow
 
-**if else statements**
+### if else statements
 ````js
 if ( temperature === 40 ){
     console.log("temperature is 40");
@@ -463,7 +463,7 @@ else{
 **Comparision Operators** :
 // <, >, <=, >=, ==, !=, ===, !==
 
-**Relational Operator** : && , ||
+### Relational Operator: && , ||
  ````js
 const userLoggedIn = true
 const debitCard = true
@@ -478,7 +478,7 @@ if (loggedInFromGoogle || loggedInFromEmail) {
     console.log("User logged in");
 }
 ````
-**Switch Case statement**
+### Switch Case statement
 ````js
 const month = "march"
 
@@ -501,10 +501,270 @@ switch (month) {
         break;
 }
 ````
-**Truthy and Falsy Values**
+### Truthy and Falsy Values
 
 Truthy values:
 ````js truth "0", 'false', " ", [], {}, function(){}````
 
 Falsy values: 
 ````js false, 0, -0, BigInt 0n, "", null, undefined, NaN````
+
+## Iterations
+
+### For Loops
+````js
+for (let i = 1; i <= 3; i++) {
+   for (let j = 1; j <= 3; j++) {
+    console.log(`Inner loop value ${j} and inner loop ${i}`);
+   }  
+}
+
+let myArray = ["ironman", "batman", "spiderman"]
+for (let i = 0; i < myArray.length; i++) {
+    console.log(myArray[i]);   
+}
+````
+### Break and Continue
+Break : Breaking out of the loop stoping it from executing
+Continue : It skips the iteration of the loop
+````js
+for (let index = 1; index <= 10; index++) {
+    if (index == 5) {
+        console.log(`Detected 5`);
+        break
+    }
+   console.log(`Value of i is ${index}`);  
+}
+
+for (let index = 1; index <= 10; index++) {
+    if (index == 5) {
+        console.log(`Detected 5`);
+        continue
+    }
+   console.log(`Value of i is ${index}`); // this statement wont be executed when cond. is satisfied 
+}
+````
+### While and DoWhile Loop
+````js
+let arr = 0
+while (arr < myArray.length) {
+    //console.log(`Value is ${myArray[arr]}`);
+    arr = arr + 1
+}
+
+let score = 11
+
+do {
+    console.log(`Score is ${score}`);
+    score++
+} while (score <= 10);
+````
+### For of Loop
+````js
+["", "", ""]
+[{}, {}, {}] 
+
+//common datatypes used in js
+
+//for arrays
+
+const arr = [1, 2, 3, 4, 5]
+for (const num of arr) {
+    console.log(num);
+}
+
+//for strings
+
+const greetings = "Hello world!"
+for (const greet of greetings) {
+    console.log(`Each char is ${greet}`)
+}
+
+//for maps
+
+const map = new Map()
+map.set('IN', "India")
+map.set('USA', "United States of America")
+map.set('Fr', "France")
+map.set('IN', "India")
+for (const [key, value] of map) {
+    console.log(key, ':-', value);
+}
+
+//for objects for of loop cant iterate thorugh it.
+````
+### For In Loop
+````js
+
+// for objects
+
+const myObject = {
+    js: 'javascript',
+    cpp: 'C++',
+    rb: "ruby",
+    swift: "swift by apple"
+}
+for (const key in myObject) {
+    console.log(`${key} shortcut is for ${myObject[key]}`);
+}
+
+//for arrays
+
+const programming = ["js", "rb", "py", "java", "cpp"]
+
+for (const key in programming) {
+    console.log(programming[key]); //here keys are the indexes
+}
+````
+### ForEach Loop
+* forEach doesnt have the return keyword.
+````js
+let coding=['js','node', 'react', 'next','express']
+
+//forEach for normal callback function
+
+coding.forEach( function (val){ 
+    console.log(val);
+} )
+
+
+//forEach for arrow function
+
+coding.forEach( (item) => {
+    console.log(item);
+} )
+
+
+//passing a function as reference in forEach
+
+function printMe(item){
+    console.log(item);
+}
+
+coding.forEach(printMe)
+
+
+//different parameter for forEach
+
+coding.forEach( (item, index, arr)=> {
+    console.log(item, index, arr);
+} )
+
+
+//forEach loop for an array of Objects
+
+const myCoding = [
+    {
+        languageName: "javascript",
+        languageFileName: "js"
+    },
+    {
+        languageName: "java",
+        languageFileName: "java"
+    },
+    {
+        languageName: "python",
+        languageFileName: "py"
+    },
+]
+
+myCoding.forEach( (item) => {
+    console.log(item); // prints the objects
+    console.log(item.languageName); //prints the property of each of the objects
+} )
+````
+* to return using forEach Loop
+````js
+  let codingarray=[]
+  const myCoding = [
+      {
+          languageName: "javascript",
+          languageFileName: "js"
+      },
+      {
+          languageName: "java",
+          languageFileName: "java"
+      },
+      {
+          languageName: "python",
+          languageFileName: "py"
+      },
+  ]
+  
+  myCoding.forEach( (item) => {
+      codingarray.push(item.languageFileName)
+  } )
+  console.log(codingarray);
+````
+## Filters, Maps & Reduce
+### Filters : 
+* The filter() method of Array instances creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function. 
+* Returns the elements of an array that meet the condition specified in a callback function.
+* The paremeters of a filter is items,index,array.
+````js
+const books = [
+    { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
+    { title: 'Book Two', genre: 'Non-Fiction', publish: 1992, edition: 2008 },
+    { title: 'Book Three', genre: 'History', publish: 1999, edition: 2007 },
+    { title: 'Book Four', genre: 'Non-Fiction', publish: 1989, edition: 2010 },
+    { title: 'Book Five', genre: 'Science', publish: 2009, edition: 2014 },
+    { title: 'Book Six', genre: 'Fiction', publish: 1987, edition: 2010 },
+    { title: 'Book Seven', genre: 'History', publish: 1986, edition: 1996 },
+    { title: 'Book Eight', genre: 'Science', publish: 2011, edition: 2016 },
+    { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
+  ];
+
+let mybooks= books.filter((keys)=>{
+return keys.genre=='Fiction'
+});
+console.log(mybooks);
+````
+### Maps:
+* The map() method of Array instances creates a new array populated with the results of calling a provided function on every element in the calling array.
+* The parameters of a map is elements, index, array.
+````js
+const myNumers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const newNums = myNumers.map( (num) => { return num + 10})
+
+// map chaining
+
+const newNums = myNumers
+                .map((num) => num * 10 )
+                .map( (num) => num + 1)
+                .filter( (num) => num >= 40)
+
+console.log(newNums);
+````
+### Reduce: 
+The reduce() method of Array instances executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.
+````js
+//for arrays
+const myNums = [1, 2, 3]
+const myTotal = myNums.reduce( (acc, curr) => acc+curr, 0)
+console.log(myTotal);
+
+// for Object arrays
+
+const shoppingCart = [
+    {
+        itemName: "js course",
+        price: 2999
+    },
+    {
+        itemName: "py course",
+        price: 999
+    },
+    {
+        itemName: "mobile dev course",
+        price: 5999
+    },
+    {
+        itemName: "data science course",
+        price: 12999
+    },
+]
+
+const priceToPay = shoppingCart.reduce((acc, item) => acc + item.price, 0)
+````
+## DOM Manipulation
+
