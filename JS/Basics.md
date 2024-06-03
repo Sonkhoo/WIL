@@ -767,4 +767,26 @@ const shoppingCart = [
 const priceToPay = shoppingCart.reduce((acc, item) => acc + item.price, 0)
 ````
 ## DOM Manipulation
+The DOM is one of the most-used APIs on the Web because it allows code running in a browser to access and interact with every node in the document. Nodes can be created, moved, and changed. Event listeners can be added to nodes and triggered on the occurrence of a given event.
 
+* The hierarchy of children of DOM is Windows --> Document ---> Html ---> Head and Body etc.
+* A tag can have attributes and text node for DOM diagram
+**Different DOM Manipulation methods**
+````
+
+// to select
+
+document.getElementById('')
+document.getElementsByName('')
+document.getElementsByClassName('')
+
+//to get attribute
+
+document.getElementById('title').getAttribute('class')
+document.getElementById('title').getAttribute('id')
+
+// set attribute
+
+document.getElementById('title').setAttribute('class', 'headingg')
+const title = document.getElementById('title')
+title.style.color='red' 
