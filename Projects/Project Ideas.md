@@ -15,6 +15,7 @@
     - News Aggreator and tech updates with ai
 7. Full stack Projects
     - Mark Up (notes manager + code snippets + task scedules like notion)
+    - Hand cricket website
     - E Learning platform using free resources
     - Real time collaboration tool
     - Real time chat application
@@ -22,3 +23,5 @@
     -Travel Booking system
     - Bumble matching movie and song based
     -P Project management / Fitness Progress Tracker (using python charts and libraries for graphs)
+
+## I Asked CHAT-GPT about project ideas for learning fullstack
