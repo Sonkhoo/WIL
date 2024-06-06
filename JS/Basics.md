@@ -772,7 +772,7 @@ The DOM is one of the most-used APIs on the Web because it allows code running i
 * The hierarchy of children of DOM is Windows --> Document ---> Html ---> Head and Body etc.
 * A tag can have attributes and text node for DOM diagram
 **Different DOM Manipulation methods**
-````
+````js
 
 // to select
 
@@ -790,3 +790,47 @@ document.getElementById('title').getAttribute('id')
 document.getElementById('title').setAttribute('class', 'headingg')
 const title = document.getElementById('title')
 title.style.color='red' 
+````
+**Query Selector**
+
+````js
+document.querySelectorAll('.class')
+document.querySelector('#id') 
+document.querySelector('input[type="password"]')
+
+const myul= document.querySelector('ul')
+const myli =myul.querySelectorAll('li') //returns a node list of list items
+
+
+// myul has different methods
+
+myul.children //returns the nodelist of the children meaninng the li
+myul.parent //returns the parent div if any
+mypara.firstElementChild //returns the first element child
+mypara.style //css property can be applied
+myul.childNodes //returns a complex tree structure of the nodes
+
+//styling
+
+myli.style.color='red'
+
+````
+* .style can also be used to add styles to the selector
+* Nodelist has forEach but html collection doesnt have forEach
+* **Both can be converted into an array**
+````js
+const myli =myul.querySelectorAll('li') //returns a node list of list items
+const myar = Array.from('myul')
+````
+* **Normal For loop iteration** is also possible in html collection and nodelist
+````js
+let htmlCollection = document.getElementsByClassName('example');
+for (let i = 0; i < htmlCollection.length; i++) {
+  console.log(htmlCollection[i].textContent);
+}
+
+let nodeList = document.querySelectorAll('.example');
+for (let i = 0; i < nodeList.length; i++) {
+  console.log(nodeList[i].textContent);
+}
+````
