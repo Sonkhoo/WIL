@@ -797,6 +797,7 @@ title.style.color='red'
 document.querySelectorAll('.class')
 document.querySelector('#id') 
 document.querySelector('input[type="password"]')
+document.querySelector('li:nth-child(3)') // to directly access any li item without converting it into a nodelist
 
 const myul= document.querySelector('ul')
 const myli =myul.querySelectorAll('li') //returns a node list of list items
@@ -833,4 +834,45 @@ let nodeList = document.querySelectorAll('.example');
 for (let i = 0; i < nodeList.length; i++) {
   console.log(nodeList[i].textContent);
 }
+````
+* Creating a new element using query selector
+````js
+const div = document.createElement('div')
+console.log(div);
+div.setAttribute('class','myclass')
+div.style.color='yellow'
+div.innerText='Chai aur code'
+document.body.appendChild(div)
+````
+* Creating a new list item
+````js
+    function addlistitem(lii){
+        const li = document.createElement('li')
+        li.innerHTML = `${lii}`
+        document.querySelector('#list_id').appendChild(li)
+    }
+    addlistitem('List3')
+// This method to create is not the most optimized method as the DOM needs to traverse through the whole list in order to append child at the end. so for list containing many items it might cause a problem.
+
+    function addlistitemOptimized(lii){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lii))
+        document.querySelector('#list_id').appendChild(li)
+    }
+    addlistitemOptimized('List4')
+````
+* Editing list items
+````js
+    function editlistitem(lii){
+        const fourthli = document.querySelector('li:nth-child(3)')
+        const newli =document.createElement('li')
+        newli.textContent=lii
+        fourthli.replaceWith(newli)
+    }
+    editlistitem('NewList')
+````
+* Remove list items
+````js
+        const lastli = document.querySelector('li:last-child')
+        lastli.remove()
 ````
