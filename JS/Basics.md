@@ -799,6 +799,8 @@ document.querySelector('#id')
 document.querySelector('input[type="password"]')
 document.querySelector('li:nth-child(3)') // to directly access any li item without converting it into a nodelist
 
+let heading = document.querySelector('.heading').id //to get the id of the selector
+
 const myul= document.querySelector('ul')
 const myli =myul.querySelectorAll('li') //returns a node list of list items
 
@@ -876,3 +878,8 @@ document.body.appendChild(div)
         const lastli = document.querySelector('li:last-child')
         lastli.remove()
 ````
+### Events
+````js
+document.querySelector('#id').addEventListener('click', function(){
+//function definition
+}, false)
