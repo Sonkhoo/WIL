@@ -10,18 +10,18 @@
     - Voting system
     - D finance Dashboard
 5. Automation Based Project
-    - AI based task scheduler and reminder
+    - **AI based task scheduler and reminder**
 6. Web Scrapping Based Project
-    - News Aggreator and tech updates with ai
+    - **News Aggreator and tech updates with ai**
 7. Full stack Projects
-    - Mark Up (notes manager + code snippets + task scedules like notion)
+    - **Mark Up (notes manager + code snippets + task scedules like notion) {imp}**
     - Hand cricket website
-    - E Learning platform using free resources
-    - Real time collaboration tool
+    - **E Learning platform** 
+    - **Real time collaboration programming tool with features like google drive**
     - Real time chat application
-    - Social Media App
-    -Travel Booking system
-    - Bumble matching movie and song based
-    -P Project management / Fitness Progress Tracker (using python charts and libraries for graphs)
+    - **Social Media App**
+    - **Travel Booking system**
+    - **E commerce application** 
+    - **P Project management / Fitness Progress Tracker (using python charts and libraries for graphs)**
 
 ## I Asked CHAT-GPT about project ideas for learning fullstack
