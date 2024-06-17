@@ -879,7 +879,28 @@ document.body.appendChild(div)
         lastli.remove()
 ````
 ### Events
-````js
+```js
 document.querySelector('#id').addEventListener('click', function(){
 //function definition
 }, false)
+
+document.querySelector('.class').addEventListener('keydown', function(){
+},false)
+```
+Event Propogation and Event Capturing
+
+* event propogation is basically event bubling basically from bottom tag to top tag so if there is a list of images and only one image has an owl. if we add event listeners to the list and the owl if the owl is clicked the owl event listener will work before then the list event listner (this happens when value is set to **false**)
+* event capturing is from top to bottom and basically viceversa and happens when value is set to **true**)
+
+```js
+//Event Objects
+document.querySelector('.class').addEventListener('keydown', function(e){
+//e stands for event object
+})
+
+//preventDefault
+document.querySelector('.class').addEventListener('keydown', function(e){
+e.preventDefault();
+})
+```
+
