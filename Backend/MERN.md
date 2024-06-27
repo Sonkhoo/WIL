@@ -48,3 +48,55 @@ app.listen(port,()=>{
     console.log(`Listening on port ${port}`);
 })
 ```
+### Connecting MongoDB and setting server + cors error and .env
+* DB
+```js
+import mongoose from "mongoose"
+import { DB_NAME } from "../constants.js"
+
+const connectDB = async()=>{
+    try {
+       const connection_instance = await mongoose.connect(`${process.env.URL}/${DB_NAME}`)
+       console.log(`\n MongoDB Connected ${connection_instance.connection.host}`);
+    } catch (error) {
+        console.log("MongoDB connection failed", error);
+        process.exit(1)
+    }
+}
+
+export default connectDB
+```
+* main index.js
+```js
+import {app} from "./app.js"
+import dotenv from "dotenv"
+import cors from "cors"
+import express from "express"
+import connectDB from "./db/index.js"
+
+const Port =process.env.PORT || 8000
+
+app.use(
+    cors({
+        origin: process.env.CORS_ORIGIN,
+        credentials: true
+    })
+)
+//common middlewares
+app.use(express.json({ limit: "16kb"}))
+app.use(express.urlencoded({extended:true, limit: "16kb"}))
+app.use(express.static("public"))
+dotenv.config({
+    path: "./.env"
+})
+connectDB()
+.then(()=>{
+    app.listen(Port, ()=>{
+        console.log(`Server is running on Port ${Port}`);
+    })
+})
+.catch((err=>{
+    console.log("MongoDB Connection error", err);
+})
+)
+```
