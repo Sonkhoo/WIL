@@ -100,3 +100,13 @@ connectDB()
 })
 )
 ```
+## Things i Have to learn 
+1. API (Udemy)
+2. Middlewares PiyushGarg & Dipesh Malvia
+3. Async await, Callbacks, Promises, try-catch
+4. Node and Express ( Piyush Garg)
+5. Req and res express documentation
+6. Mongoose documentation (hooks, methods, queries, middlewares documents and models)
+7. Authentication using bcrypt, sessions and jwt (Piyush Garg and Chai aur code) & O-auth (Udemy)
+8. Backend (chai aur code)
+9. Cohort (Hakirat) 
