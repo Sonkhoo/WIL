@@ -22,8 +22,8 @@
     - **Social Media App**
     - **Travel Booking system**
     - **E commerce application** 
-    - **P Project management / Fitness Progress Tracker (using charts and libraries and dashboard)
-- **Aura Habit tracker with smart reward system.**
+    - **P Project management / Fitness Progress Tracker** (using charts and libraries and dashboard)
+    - **Aura Habit tracker with smart reward system.**
 
 ## I Asked CHAT-GPT about project ideas for learning fullstack
 
