@@ -1,6 +1,6 @@
 # Project Ideas
 1. LLM Based Projects 
-    - Intelligent Chatbox (with pdf summarize and vide summary and youtube questioning )
+    - Intelligent Chatbox (with pdf summarize and video summary and youtube questioning )
 2. NLP Based Projects
     - Personalized Content Recommendation
     - Sentinment Analysis 
@@ -15,6 +15,7 @@
     - **News Aggreator and tech updates with ai**
 7. Full stack Projects
     - **Mark Up (notes manager + code snippets + task scedules like notion) {imp}**
+    - Start From (a web app where people can tweet their ideas about startups and get upvotes and reviews. people can collaborate with more tech peeps for their ideas)
     - Hand cricket website
     - **E Learning platform** 
     - **Real time collaboration programming tool with features like google drive**
